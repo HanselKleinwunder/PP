@@ -134,7 +134,8 @@ int main()
 		//int year = 2000;
 
 		//Вычислили значение 
-		//bool isLeapYear = 
+		bool isLeapYear = (year % 4 == 0) && !(year % 100 == 0) || (year % 400 == 0);
+		std::cout << isLeapYear << std::endl;
 		// проверили значение в отладчике
 		stop
 	}
@@ -222,7 +223,16 @@ int main()
 	//на каждой итерации x=x+1, sum=sum+1/x
 	//найти значение x, при котором sum>1.7
 	{
+		int x = 0;
+		double sum = 0;
 
+		while (sum <= 1.7)
+		{
+			x += 1;
+			sum = sum + 1 / static_cast<double>(x);
+		}
+
+		std::cout << x << std::endl;
 	stop
 	}
 // ********************************************************

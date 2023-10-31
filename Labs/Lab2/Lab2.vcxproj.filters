@@ -15,8 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\2\lab2_2023_2.cpp">
-      <Filter>Header Files</Filter>
+    <ClCompile Include="lab2_2023_2.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
