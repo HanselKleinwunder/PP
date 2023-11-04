@@ -239,28 +239,44 @@ int main()
 //Задание 5 Побитовая арифметика (and, or, xor, not), сдвиги.
 	//5.1 
 	{
-		
-	//а)Задайте значение номера бита с помощью потока ввода. Желательно контролировать корректность ввода
+		//а)Задайте значение номера бита с помощью потока ввода. Желательно контролировать корректность ввода
 		size_t num_bit;
+		//Однобайтовое значение, маска тоже будет однобайтовая. Ноль - младший бит, 7 - старший
+		std::cout << "Please, enter bit number: ";
+		do
+		{
+			std::cin >> num_bit; //указываем бит, с которым будут производиться дальнейшие действия
+
+			if (!(num_bit >= 0 && num_bit <= 7))
+			{
+				std::cout << "Error. Please, enter bit number: ";
+			}
+		} while (!(num_bit >= 0 && num_bit <= 7));
 
 	//б)  в переменной val обнулите значение бита, заданного переменной num_bit
 		{
 			char val = 0xff;
+			unsigned char mask = ~(1 << num_bit);
+			char result = val & mask;
+			std::cout << result << std::endl;
 		}
-	
 	stop
 			
 	//в)  в переменной val определите значение бита, заданного переменной num_bit	
 		{
 			char val = 0xAA;
-
-		}
-			
+			unsigned char mask = 1 << num_bit;
+			char x = val & mask;
+			char result2 = x >> num_bit;
+			std::cout << result2 << std::endl;
+		}	
 	stop
 	//г)	в переменной val установите  в 1 значение бита, заданного переменной num_bit	
 		{
-		char val = 0;
-
+			char val = 0;
+			unsigned char mask = 1 << num_bit;
+			char result3 = val | mask;
+			std::cout << result3 << std::endl;
 		}
 	stop
 	}
