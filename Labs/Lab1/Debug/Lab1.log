@@ -1,10 +1,12 @@
 ﻿  lab1_2023.cpp
-E:\Lernen\Documents\IT\Programming\C and C++\Процедурное программирование\Lab\Code\Labs\Lab1\lab1_2023.cpp(110,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-E:\Lernen\Documents\IT\Programming\C and C++\Процедурное программирование\Lab\Code\Labs\Lab1\lab1_2023.cpp(153,42): warning C4244: '=': conversion from 'double' to 'char', possible loss of data
-E:\Lernen\Documents\IT\Programming\C and C++\Процедурное программирование\Lab\Code\Labs\Lab1\lab1_2023.cpp(153,23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Lernen\Documents\IT\Programming\C and C++\Процедурное программирование\Lab\Code\Labs\Lab1\lab1_2023.cpp(166,38): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Lernen\Documents\IT\Programming\C and C++\Процедурное программирование\Lab\Code\Labs\Lab1\lab1_2023.cpp(166,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-E:\Lernen\Documents\IT\Programming\C and C++\Процедурное программирование\Lab\Code\Labs\Lab1\lab1_2023.cpp(166,15): warning C4244: '=': conversion from 'short' to 'char', possible loss of data
-E:\Lernen\Documents\IT\Programming\C and C++\Процедурное программирование\Lab\Code\Labs\Lab1\lab1_2023.cpp(196,10): warning C4309: 'initializing': truncation of constant value
-E:\Lernen\Documents\IT\Programming\C and C++\Процедурное программирование\Lab\Code\Labs\Lab1\lab1_2023.cpp(366,7): warning C4305: '=': truncation from 'int' to 'bool'
-  Lab1.vcxproj -> E:\Lernen\Documents\IT\Programming\C and C++\Процедурное программирование\Lab\Code\Labs\Debug\Lab1.exe
+E:\Lernen\Documents\IT\Repositories\PP\Labs\Lab1\lab1_2023.cpp(110,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+E:\Lernen\Documents\IT\Repositories\PP\Labs\Lab1\lab1_2023.cpp(153,53): warning C4244: '=': conversion from 'double' to 'char', possible loss of data
+E:\Lernen\Documents\IT\Repositories\PP\Labs\Lab1\lab1_2023.cpp(153,28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Lernen\Documents\IT\Repositories\PP\Labs\Lab1\lab1_2023.cpp(166,47): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Lernen\Documents\IT\Repositories\PP\Labs\Lab1\lab1_2023.cpp(166,36): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\Lernen\Documents\IT\Repositories\PP\Labs\Lab1\lab1_2023.cpp(166,18): warning C4244: '=': conversion from 'short' to 'char', possible loss of data
+E:\Lernen\Documents\IT\Repositories\PP\Labs\Lab1\lab1_2023.cpp(196,12): warning C4309: 'initializing': truncation of constant value
+E:\Lernen\Documents\IT\Repositories\PP\Labs\Lab1\lab1_2023.cpp(385,7): warning C4305: '=': truncation from 'int' to 'bool'
+  test.cpp
+  Generating Code...
+  Lab1.vcxproj -> E:\Lernen\Documents\IT\Repositories\PP\Labs\Debug\Lab1.exe

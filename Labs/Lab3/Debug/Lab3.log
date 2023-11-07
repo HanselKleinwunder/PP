@@ -1,0 +1,3 @@
+﻿  lab3_2023_2.cpp
+E:\Lernen\Documents\IT\Repositories\PP\Labs\Lab3\lab3_2023_2.cpp(79,2): error C2374: 'C': redefinition; multiple initialization
+E:\Lernen\Documents\IT\Repositories\PP\Labs\Lab3\lab3_2023_2.cpp(76): message : see declaration of 'C'
