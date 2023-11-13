@@ -335,12 +335,11 @@ int main()
 	{
 		int x = 0xA1B2C3D4;
 
-		x = (x << 24) | (x >> 24) & 0xff; //| (x << 8) | (x >> 8) & 0xffc3ff; //попробовать задать & 00FF00, FF00 и т.д. Поработать с маской
-		x = (x << 8) & 0x0000FF00 | (x >> 8) & 0x00FF0000;
-
+		x = (x << 24) | (x >> 24) & 0xff | (x << 8) & 0x00FF0000 | (x >> 8) & 0x0000FF00;
+		
 		std::cout << std::hex << x << std::dec << std::endl;
 	
-	stop
+
 	}
 
 #endif
@@ -378,7 +377,7 @@ int main()
 
 #endif
 //Задание 6.2
-#if 1
+#if 0
 
 // ********************************************************
 //Выведите значение "y"  на консоль в двоичном виде, 
@@ -388,22 +387,38 @@ int main()
 	{
 		int value = 0;
 		unsigned int mask = 1 << 31;
-		int index = 0;
 		std::cout << "Enter your number: ";
 		std::cin >> value;
 
-		for (int i = 31; i >= 0; i--)
+		if (value != 0) 
 		{
-			int x = value & mask;
-			x = x >> i;
-			if ((x == 0) || (x == 1))
+			bool index = false;
+			for (int i = 31; i >= 0; i--)
 			{
-				std::cout << (x);
-			}
+				int x = value & mask;
 
-			mask = mask >> 1;
+				if (x)
+				{
+					index = true; //Если x, то выводим единицу, а флаг назначаем истиной
+					std::cout << 1;
+				}
+				else 
+				{
+					if (index == true) 
+					{
+						std::cout << 0; //иначе, если истина, то выводим 0
+
+					}
+				}
+				mask = mask >> 1;
+			}
+		}
+		else 
+		{
+			std::cout << value;
 		}
 	}
+	stop
 
 #endif
 //Задание 6.3 (*)
