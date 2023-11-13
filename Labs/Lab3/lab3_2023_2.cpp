@@ -358,7 +358,7 @@ int _tmain()
 	pVoid = &dObject3;	//dObject3	33.329999999999998	double
 
 
-	int nTmp = *(static_cast<int*>(pVoid) ); //Половина значения отбросится
+	int nTmp = *(static_cast<int*>(pVoid)); //Половина значения отбросится
 	int nTmp2 = *(static_cast<int*>(pVoid));
 	stop
 
