@@ -72,8 +72,8 @@ int main()
 		//void* pn = &n;  
 		void const* pn = &n;
 //2) как получить значение посредством  void* ?
-		void* pn = &n;
-		int* intP = static_cast<int*>(pn);
+		//void* pn = &n;
+		int intP = *static_cast<const int*>(pn);
 	}
 #endif
 	stop
@@ -83,8 +83,9 @@ int main()
 //Присвойте переменной типа char значение любого элемента строки.
 //Проверьте - возможно ли присвоить какое-либо значение по адресу, задаваемому указателем?
 
-	char* pc = "ABC";
-	char a = "A";
+	const char* pc = "ABC";
+	char a = pc[0];// "A";
+	//*pc = 'd';
 	//Мы не можем присвоить какое-либо значение. Область памяти строкового литерала защищена от записи
 #endif
 	stop
@@ -127,7 +128,6 @@ int main()
 	cc = *(++pucObject5);		//cc	0x66 'f'	char, pucObject5	0x0099f78a "fUÌÌÌÌ"		unsigned char *
 #endif
 	stop
-
 ///////////////////////////////////////////////////////////////
 //			Встроенные массивы                               
 ///////////////////////////////////////////////////////////////
@@ -144,10 +144,11 @@ int main()
 	int ar[] = { 5, 4, 7, 8, 1, 2, 6, 0, 10, 12, 77, 11,
 					  6, 8, 33, 21, 1, 2, 3, 4};
 	int temp = 0;
+	int n = sizeof(ar) / sizeof(ar[0]);
 
-	for (int i = 0; i < sizeof(ar) / sizeof(ar[0]); i++) 
+	for (int i = 0; i < n; i++) 
 	{
-		for (int j = 0; j < sizeof(ar) / sizeof(ar[0] - 1); j++) 
+		for (int j = 0; j < n - 1; j++) 
 		{
 			if (ar[j + 1] < ar[j]) 
 			{
@@ -211,7 +212,7 @@ int main()
 
 //в)Отсортируйте массив по убыванию значений. 
 //Используйте сортировку "выбором"
-
+	{
 	srand(time(0));
 	//a объявление одномерного массива на 10 элементов
 	const int N = 10;
@@ -225,12 +226,12 @@ int main()
 	//b вывод массива на печать
 	std::cout << "No sorting: ";
 
-	for (size_t j = 0; j < sizeof(arr)/sizeof(arr[0]); j++)
+	for (size_t j = 0; j < sizeof(arr) / sizeof(arr[0]); j++)
 	{
 		std::cout << arr[j] << " ";
 	}
 	//c сортировка по убыванию. Используется алгоритм сортировки "выбором"
-	for (size_t k = 0; k < sizeof(arr)/sizeof(arr[0]) - 1; k++)
+	for (size_t k = 0; k < sizeof(arr) / sizeof(arr[0]) - 1; k++)
 	{
 		int indexMax = k;//запоминаем индекс текущего элемента
 
@@ -254,7 +255,7 @@ int main()
 	{
 		std::cout << arr[z] << " ";
 	}
-
+	}
 #endif
 	stop
 // *******************************************************
@@ -273,66 +274,58 @@ int main()
 	{
 		std::cout << "Enter [" << i << "] number to fill the array: ";
 		std::cin >> arr[i];
-	}
 
-	for (int i = 1; i < N; i++)
-	{
 		int temp = arr[i]; //запоминаем обрабатываемый элемент
-
+	
 		for (int j = i - 1; j >= 0 && arr[j] > temp; j--)
 		{
 			temp = arr[j + 1];
 			arr[j + 1] = arr[j];
 			arr[j] = temp;
 		}
-	}
 
-	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
-	{
-		std::cout << arr[i] << " ";
+		for (int ii = 0; ii <= i; ii++)
+		{
+			std::cout << arr[ii] << " ";
+		}
+		std::cout << std::endl;
 	}
 #endif
 	stop
 // *******************************************************
 //Задание 7. 
-#if 1
+#if 0
 //Простой поиск.
 //Модифицируйте предыдущее задание следующим образом:
 //очередное введенное значение помещается в массив только при условии, 
 //что там еще такого нет (то есть дубли игнорируются)
 
-const int N = 5;
-	int arr[N] = { 1, 1, 2, 2, 4 };
-	const int S = 5;
-	int garbageArr[S];
-	int count = 0;
+	const int N = 5;
+	int arr[N];
 
-	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
+	for (int i = 0; i < N; i++)
 	{
-		for (int j = i + 1; j < sizeof(arr) / sizeof(arr[0]) - 1; j++)
+		std::cout << "Enter [" << i << "] number to fill the array: ";
+		std::cin >> arr[i];
+
+		int temp = arr[i]; //запоминаем обрабатываемый элемент
+
+		bool fl = false;
+		for (int j = 0; j < i; j++)
 		{
 			if (arr[i] == arr[j])
 			{
-				garbageArr[count] = arr[j];
-				count++;
+				fl = true;
+				break;
 			}
 		}
-	}
+		// Проверка на повторы!!!
 
-	const int L = 5;
-	int newArr[L];
-
-	for (int i = 0; i < sizeof(garbageArr) / sizeof(garbageArr[0]); i++)
-	{
-		for (int i = 0; i < length; i++)
-		{
-
+		if (fl) {
+			i--;
+			continue;
 		}
-	}
 
-	for (int i = 1; i < N; i++)
-	{
-		int temp = arr[i];
 
 		for (int j = i - 1; j >= 0 && arr[j] > temp; j--)
 		{
@@ -340,11 +333,12 @@ const int N = 5;
 			arr[j + 1] = arr[j];
 			arr[j] = temp;
 		}
-	}
 
-	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
-	{
-		std::cout << arr[i] << " ";
+		for (int ii = 0; ii <= i; ii++)
+		{
+			std::cout << arr[ii] << " ";
+		}
+		std::cout << std::endl;
 	}
 #endif
 stop
@@ -371,15 +365,6 @@ stop
 	{
 		arr[i] = s[rand() % 2];
 		std::cout << arr[i] << ' ';
-
-		/*if (rand() % 2 == 0)
-		{
-			std::cout << arr[i] << '*';
-		}
-		else 
-		{
-			std::cout << arr[i] << '_';
-		}*/
 	}
 
 	while(left < right)
@@ -433,15 +418,16 @@ stop
 	int s = sizeof(arr) / sizeof(arr[0]);
 //А
 #if 0
-	for (int i = s - 1; i >= 0; i--)
+	for (int i = s - 1; i > 0; i--)
 	{
 		arr[i] = arr[i - 1];
 	}
 
-	for (int i = 1; i < s; i++)
+	for (int i = 0; i < s; i++)
 	{
 		std::cout << arr[i] << " ";
 	}
+	std::cout << std::endl;
 #endif
 //Б
 #if 0
@@ -459,15 +445,17 @@ stop
 	{
 		std::cout << arr[i] << " ";
 	}
+	std::cout << std::endl;
 #endif
 //B
 #if 0
 	int shift = 1;
 
-	for (int i = s - 1; i >= 0; i--)
+	for (int i = 0; i < s; i++)
 	{
-		std::cout << arr[(shift + i) % s] << " ";
+		std::cout << arr[((s - shift) + i) % s] << " ";
 	}
+	std::cout << std::endl;
 #endif
 #endif
 	stop
