@@ -277,7 +277,7 @@ int main()
 
 	for (int i = 1; i < N; i++)
 	{
-		int temp = arr[i];
+		int temp = arr[i]; //запоминаем обрабатываемый элемент
 
 		for (int j = i - 1; j >= 0 && arr[j] > temp; j--)
 		{
@@ -301,33 +301,33 @@ int main()
 //очередное введенное значение помещается в массив только при условии, 
 //что там еще такого нет (то есть дубли игнорируются)
 
-
-	const int N = 5;
-	/*int arr[N];*/
+const int N = 5;
 	int arr[N] = { 1, 1, 2, 2, 4 };
 	const int S = 5;
-	int newArr[S];
-
-	/*for (int i = 0; i < N; i++)
-	{
-		std::cout << "Enter [" << i << "] number to fill the array: ";
-		std::cin >> arr[i];
-	}*/
+	int garbageArr[S];
+	int count = 0;
 
 	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
 	{
-		for (int j = i + 1; j < sizeof(arr) / sizeof(arr[0]); j++)
+		for (int j = i + 1; j < sizeof(arr) / sizeof(arr[0]) - 1; j++)
 		{
 			if (arr[i] == arr[j])
 			{
-				newArr[i] = arr[i];
+				garbageArr[count] = arr[j];
+				count++;
 			}
 		}
 	}
 
-	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
+	const int L = 5;
+	int newArr[L];
+
+	for (int i = 0; i < sizeof(garbageArr) / sizeof(garbageArr[0]); i++)
 	{
-		std::cout << newArr[i] << " ";
+		for (int i = 0; i < length; i++)
+		{
+
+		}
 	}
 
 	for (int i = 1; i < N; i++)
