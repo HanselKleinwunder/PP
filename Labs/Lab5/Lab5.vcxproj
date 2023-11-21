@@ -18,6 +18,13 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lab5_2023.cpp" />
+    <ClCompile Include="other.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="other.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -126,13 +133,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\Programming\C and C++\Процедурное программирование\Лабораторные\Lab5\lab5_2023.cpp" />
-    <ClCompile Include="..\..\..\..\Programming\C and C++\Процедурное программирование\Лабораторные\Lab5\other.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\Programming\C and C++\Процедурное программирование\Лабораторные\Lab5\other.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Programming\C and C++\Процедурное программирование\Лабораторные\Lab5\lab5_2023.cpp">
+    <ClCompile Include="lab5_2023.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Programming\C and C++\Процедурное программирование\Лабораторные\Lab5\other.cpp">
+    <ClCompile Include="other.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Programming\C and C++\Процедурное программирование\Лабораторные\Lab5\other.h">
+    <ClInclude Include="other.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
