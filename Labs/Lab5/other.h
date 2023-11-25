@@ -10,3 +10,4 @@ extern void Swap_r(int& nX, int& nY);
 extern const int N;
 extern void PrintArray(int* ar, int size);
 extern int Min(int* ar, int size);
+extern int MyStrCmp(char* first_str, char* second_str);

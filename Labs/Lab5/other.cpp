@@ -58,7 +58,11 @@ int Min(int* ar, int size)
 		}
 	}
 
-	std::cout << min;
+	return min;
+}
+
+int MyStrCmp(char* first_str, char* second_str) {
+
 }
 
 
