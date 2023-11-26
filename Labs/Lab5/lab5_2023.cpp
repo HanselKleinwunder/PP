@@ -152,7 +152,7 @@ int _tmain()
 	char first_str[100] = "ABCDFTS";
 	char second_str[100] = "ABCDF";
 
-	int result = MyStrCmp(first_str, second_str);
+	int result = MyStrCmp(first_str, second_str, strLength(first_str), strLength(second_str));
 
 	std::cout << result;
 #endif
@@ -182,6 +182,13 @@ int _tmain()
 //Напишите функцию, которая находит адрес минимального элемента в массиве,
 // таким образом, чтобы ее вызов можно было использовать слева от знака 
 // равенства: *MyMin(параметры) = 0;
+
+	int arr[] = { 5, 10, 2, 4, 1 };
+
+	int result = *myMin(arr, sizeof(arr) / sizeof(arr[0])) = 0;
+
+	std::cout << result;
+
 #endif
 	stop
 ////////////////////////////////////////////////////////////////////////////
