@@ -31,7 +31,7 @@ int _tmain()
 //Подсказка: ref - это внешняя по отношению к данному файлу ссылка!
 //Подумайте, где надо объявить эту внешнюю ссылку, а где ее определить.
 
-	extern double& ref;
+	//extern double& ref;
 	ref++;
 #endif
 	stop
@@ -64,10 +64,10 @@ int _tmain()
 //Эти файлы можно использовать для размещения  Ваших функций.
 	{
 		int x = 10;
-		int y = 5;
+		//int y = 5;
 		int res1 = Square(x);
-		int& res2 = y;
-		Square(y);
+		//int& res2 = y;
+		int res2 = Square(5);
 	}
 #endif
 	stop
@@ -83,8 +83,8 @@ int _tmain()
 	// Проверьте правильность с помощью отладчика.
 
 	int val = 1;//значение этой переменной должно быть увеличено с помощью каждой из функций на единицу
-	IncByValue(val); //Остаётся единица, область видимости и время жизни ограничивается фигурными скобками тела функции
-	IncByReference(val); //Передача по ссылке. Значение увеличивается на единицу. Получаем двойку
+	val  = IncByValue(val); //Остаётся единица, область видимости и время жизни ограничивается фигурными скобками тела функции
+	int rrr = IncByReference(val); //Передача по ссылке. Значение увеличивается на единицу. Получаем двойку
 	IncByPointer(&val); //На выходе тройка
 #endif
 	stop
@@ -129,7 +129,7 @@ int _tmain()
 #endif
 	stop
 // 3.3. Напишите функцию сравнения двух строк - MyStrCmp(): Доделать!
-#if 0
+#if 1
 //Функция должна принимать два указателя на сравниваемые строки 
 //(возможно Вы должны указать компилятору, что функция не имеет права модифицировать 
 //содержимое строк)
@@ -149,7 +149,7 @@ int _tmain()
 
 //Выведите результат сравнения с помощью cout:
 
-	char first_str[100] = "ABCDFTS";
+	char first_str[100] = "ABCDF";
 	char second_str[100] = "ABCDF";
 
 	int result = MyStrCmp(first_str, second_str, strLength(first_str), strLength(second_str));
@@ -185,9 +185,9 @@ int _tmain()
 
 	int arr[] = { 5, 10, 2, 4, 1 };
 
-	int result = *myMin(arr, sizeof(arr) / sizeof(arr[0])) = 0;
+	*myMin(arr, sizeof(arr) / sizeof(arr[0])) = 0;
 
-	std::cout << result;
+	//std::cout << result;
 
 #endif
 	stop

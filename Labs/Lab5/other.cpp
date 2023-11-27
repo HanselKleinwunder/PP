@@ -1,10 +1,11 @@
 #include "other.h"
 #include <iostream>
 
-int ref = 3;
-int Square(int& x) 
+double a = 4;
+double& ref = a;
+int Square(const int& x) 
 {
-	return x *= x;
+	return x * x;
 }
 
 int IncByValue(int val) 
@@ -76,32 +77,39 @@ int strLength(const char* str) {
 
 int MyStrCmp(const char* f_str, const char* s_str, int f_size, int s_size)
 {
-	for (int i = 0; i < f_size && s_size; i++)
+	int sz = 0;
+
+	if (f_size > s_size) {
+		sz = f_size;
+	}
+	else {
+		sz = s_size;
+	}
+
+	for (int i = 0; i < sz; i++)
 	{
 		if (f_str[i] > s_str[i]) {
 			return 1;
 		}
 		else if (f_str[i] < s_str[i]) {
 			return -1;
-		}
-		else {
-			return 0;
-		}
-	}
+		}		
+	}	
+	return 0;	
 }
 
 int* myMin(int* arr, int size) {
 
-	int min = arr[0];
+	int* min = &arr[0];
 
 	for (int i = 1; i < size; i++)
 	{
-		if (arr[i] < min) {
-			min = arr[i];
+		if (arr[i] < *min) {
+			min = &arr[i];
 		}
 	}
 
-	return &min;
+	return min;
 }
 
 const char* NameOfMonth(int month) {
@@ -131,7 +139,7 @@ const char* NameOfMonth(int month) {
 	case 12:
 		return "December";
 	default:
-		break;
+		return "Err";
 	}
 }
 
